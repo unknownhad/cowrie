@@ -112,12 +112,12 @@ Most of the content is very well described over here : https://cryptax.medium.co
 A few updates 
 * Run docker file to copy directory path `docker run --rm -it openwrtorg/rootfs:x86–64`
 * Use code in OS (not inside the docker to create picle file system) replace `DOCKER_ID` witht he ID of docker you trying to copy
-```bash
-for i in proc usr sbin sys lib etc bin
-do
-  docker cp DOCKER_ID:$i /tmp/picklefs
-done
-```
+* To get started quickly and give Cowrie a try, run::
+
+    $ for i in proc usr sbin sys lib etc bin
+      do
+        docker cp DOCKER_ID:$i /tmp/picklefs
+      done
 
 * voila all done. 
 
