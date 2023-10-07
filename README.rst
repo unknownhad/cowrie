@@ -106,6 +106,19 @@ Files of interest:
 * `bin/createfs <https://github.com/cowrie/cowrie/blob/master/bin/createfs>`_ - used to create the fake filesystem
 * `bin/playlog <https://github.com/cowrie/cowrie/blob/master/bin/playlog>`_ - utility to replay session logs
 
+Customize cowrie as per use case
+*****************************************
+Most of the content is very well described over here : https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
+A few updates 
+* Run docker file to copy directory path `docker run --rm -it openwrtorg/rootfs:x86–64`
+* USe code in OS (not inside the docker to create picle file system) replace `DOCKER_ID` witht he ID of docker you trying to copy
+  
+```for i in proc usr sbin sys lib etc bin
+do
+  docker cp DOCKER_ID:$i /tmp/picklefs
+done```
+voila all done. 
+
 Contributors
 ***************
 
